@@ -34,7 +34,7 @@ QQ 群戳一戳 ──► OneBot V11 (NapCat) ──► 本程序(WS 客户端) 
 ## 环境要求
 
 - Node.js 18+（开发环境为 v24）
-- 任一 OneBot V11 实现（推荐 [NapCat](https://napcat.napneko.icu/)、LLOneBot、go-cqhttp），开启**正向 WebSocket**，例如监听 `0.0.0.0:6700`（参考仓库内 `bot（java-paperQQ消息互通机器人）/qq-bridge/README.md` 的 OneBot 配置说明）
+- 任一 OneBot V11 实现（推荐 [NapCat](https://napcat.napneko.icu/)、LLOneBot、go-cqhttp），开启**正向 WebSocket**，例如监听 `0.0.0.0:6700`
 - 手机上安装 DG-LAB App 并已连接郊狼脉冲主机
 - 本机防火墙放行网页控制台端口（App 需要通过局域网连接本程序）
 
@@ -210,8 +210,6 @@ npm start
 
 | 目录 | 用途 |
 | ---- | ---- |
-| `onebot-11-master/` | OneBot V11 协议文档（正向 WebSocket、戳一戳通知事件） |
-| `bot（java-paperQQ消息互通机器人）/qq-bridge` | 参考实现：Java 客户端连接 OneBot 的方式（Authorization 头、get_login_info 握手） |
 | `郊狼网页控制台/dglab-websocket-server-main/` | DG-LAB Socket V3 服务器参考实现（本程序内置服务器的移植对象） |
 | `郊狼网页控制台/server.js`、`public/index.html` | V3 协议消息示例与二维码格式（`#DGLAB-SOCKET#ws://...`） |
 | `郊狼网页控制台/coyote/` | 郊狼蓝牙协议文档（波形帧编码依据） |
