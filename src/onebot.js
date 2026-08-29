@@ -39,7 +39,7 @@ class OneBotClient extends EventEmitter {
       // 先摘除旧连接的全部监听再关闭，防止重连瞬间旧连接缓冲的事件被重复派发
       const old = this.ws;
       old.removeAllListeners();
-      try { old.close(); } catch {}
+      try { if (old.readyState === WebSocket.OPEN) old.close(); } catch {}
       this.ws = null;
     }
     this.connected = false;
