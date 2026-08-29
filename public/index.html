@@ -474,9 +474,12 @@ function parsePulseFile(text) {
   for (const sec of sections) {
     const slash = sec.indexOf('/');
     if (slash < 0) continue;
-    const header = sec.slice(0, slash).split(',').map((s) => parseInt(s, 10));
+    const headerPart = sec.slice(0, slash);
+    const eqIdx = headerPart.indexOf('=');
+    const headerStr = eqIdx >= 0 ? headerPart.slice(eqIdx + 1) : headerPart;
+    const header = headerStr.split(',').map((s) => parseInt(s, 10));
     if (header.length < 5) continue;
-    // 小节头: 频率A,频率B,小节时长,频率模式,小节开关（可能有波形描述前缀，取最后 5 个）
+    // 小节头: 频率A,频率B,小节时长,频率模式,小节开关
     const [freqA, freqB, timeIdx, mode, enabled] = header.slice(-5);
     if (!enabled) continue;
 

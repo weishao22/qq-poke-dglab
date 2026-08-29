@@ -71,7 +71,7 @@ function normalizeGear(g) {
     freqMs: clamp(src.freqMs, 10, 1000),
     waveStrength: clamp(src.waveStrength, 0, 100),
     durationSec: clamp(src.durationSec, 1, 300),
-    customWave: String(src.customWave || '').slice(0, 500),
+    customWave: String(src.customWave || '').slice(0, 50000),
   };
 }
 
