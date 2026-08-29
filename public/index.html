@@ -17,7 +17,22 @@
   --ok: #3ddc84;
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif; font-size: 14px; }
+body {
+  margin: 0;
+  background: #0f1117 url('https://t.alcy.cc/ycy') center/cover no-repeat fixed;
+  color: var(--text);
+  font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+}
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: rgba(15,17,23,0.78);
+  z-index: 0;
+  pointer-events: none;
+}
 header { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding: 12px 20px; background: rgba(15,17,23,.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
 header h1 { font-size: 16px; margin: 0; color: var(--accent); font-weight: 600; }
 .badge { padding: 4px 10px; border-radius: 999px; font-size: 12px; border: 1px solid var(--border); color: var(--muted); white-space: nowrap; }
@@ -37,7 +52,7 @@ header h1 { font-size: 16px; margin: 0; color: var(--accent); font-weight: 600; 
 .auth-cap { display: flex; justify-content: center; margin: 6px 0 14px; }
 .auth-cap cap-widget { margin: 0 auto; }
 #auth-btn { width: 100%; padding: 10px; font-size: 15px; }
-main { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; padding: 16px 20px 60px; max-width: 1500px; margin: 0 auto; }
+main { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; padding: 16px 20px 60px; max-width: 1500px; margin: 0 auto; position: relative; z-index: 1; }
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; }
 .card h2 { margin: 0 0 12px; font-size: 14px; color: var(--accent); font-weight: 600; border-left: 3px solid var(--accent); padding-left: 8px; }
 .card.wide { grid-column: 1 / -1; }
